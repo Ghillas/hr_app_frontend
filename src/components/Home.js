@@ -1,4 +1,5 @@
 import {useNavigate} from 'react-router-dom';
+import '../styles/Home.css'
 
 function Home() {
     const navigate = useNavigate();
@@ -9,9 +10,19 @@ function Home() {
         navigate('/projects');
     }
     return (
-        <div>
-            <button onClick={handleClick}>Employer</button>
-            <button onClick={handleProjectClick}>Projets</button>
+        <div className='home_buttons_div'>
+            <button 
+                className='home_button'
+                onClick={handleClick}
+            >
+                Employer
+            </button>
+            <button 
+                className='home_button'
+                onClick={handleProjectClick}
+            >
+                Projets
+            </button>
         </div>
     );
 }

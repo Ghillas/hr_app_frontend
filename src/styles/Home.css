@@ -1,0 +1,21 @@
+.home_button {
+    color : green;
+    margin : auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    box-shadow: 10px;
+    display: block;
+    border-radius: 10rem;
+    font-size: 1rem;
+}
+
+.home_button:hover {
+    background-color: green;
+    color: white;
+}
+
+.home_buttons_div {
+    width: 50%;
+    margin : auto;
+}

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import ProjectItem from "./ProjectItem";
+import '../styles/Employee.css'
 
 function Employee() {
     const location = useLocation()
@@ -75,32 +76,47 @@ function Employee() {
     }, [])
 
     return (
-        <div>
+        <div className="employee_div">
         <form>
         <input
+            className="employee_first_name employee_field"
             placeholder="Prenom"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
         />
          <input
+            className="employee_last_name employee_field"
             placeholder="Nom"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
         />
         <input
+            className="employee_mail employee_field"
             placeholder="Email"
             value={mail}
             onChange={(e) => setMail(e.target.value)}
             onBlur={checkMailAddress}
         />
          <input
+            className="employee_password employee_field"
             placeholder="Mot de passe"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit" onClick={handleSubmit}>{employee ? "Modifier" : "Ajouter"}</button>
+        <button 
+            className="employee_submit employee_button"
+            type="submit" 
+            onClick={handleSubmit}
+        >
+            {employee ? "Modifier" : "Ajouter"}
+        </button>
         {
-            employee && <button onClick={handleDelete}>Supprimer</button>
+            employee && <button 
+                className="employee_delete employee_button"
+                onClick={handleDelete}
+            >
+                Supprimer
+            </button>
         }
         </form>
         {
