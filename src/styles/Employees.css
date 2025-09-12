@@ -1,0 +1,41 @@
+table {
+    display: inline-block;
+    margin: auto;
+    width: 50%;
+    border-collapse: collapse;
+    border: 2px solid black;
+    font-size: large;
+}
+
+thead th:nth-child(1) {
+  width: 15%;
+  border: 1px solid black;
+}
+
+thead th:nth-child(2) {
+  width: 15%;
+  border: 1px solid black;
+}
+
+thead th:nth-child(3) {
+  width: 20%;
+  border: 1px solid black;
+}
+
+button {
+    color : green;
+    margin-top: 1rem;
+    margin-inline : auto;
+    width: 20%;
+    border: 3px solid green;
+    padding: 10px;
+    box-shadow: 10px;
+    display: block;
+    border-radius: 10rem;
+    font-size: large;
+}
+
+button:hover {
+    color: white;
+    background-color: green;
+}

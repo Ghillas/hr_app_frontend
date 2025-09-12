@@ -1,0 +1,28 @@
+.employee_field {
+    margin-top: 1rem;
+    margin-inline: auto;
+    display: block;
+    border-radius: 10rem;
+    width: 25%;
+    padding: 10px;
+    font-size: large;
+}
+
+
+.employee_button {
+    color : green;
+    margin-top: 1rem;
+    margin-inline : 1rem;
+    width: 20%;
+    border: 3px solid green;
+    padding: 10px;
+    box-shadow: 10px;
+    display: inline-block;
+    border-radius: 10rem;
+    font-size: large;
+}
+
+.employee_button:hover {
+    color: white;
+    background-color: green;
+}

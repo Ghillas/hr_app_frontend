@@ -1,0 +1,6 @@
+tr, td {
+    border-collapse : collapse;
+    border: 1px solid #000000;
+    font-size: large;
+    margin-top: 10px;
+}

@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import EmployeeItem from './EmployeeItem';
+import '../styles/Employees.css'
 
 function Employees() {
     const [employees, updateEmployees] = useState([])
