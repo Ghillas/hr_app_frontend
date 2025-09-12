@@ -34,7 +34,7 @@ function Employees() {
                     }
                 </tbody>
             </table>
-            <button onClick={handleNewEmployeeClick}>Ajouter un employer</button>       
+            <button className="addEmployeeButton" onClick={handleNewEmployeeClick}>Ajouter un employer</button>       
         </div>
     )
 }

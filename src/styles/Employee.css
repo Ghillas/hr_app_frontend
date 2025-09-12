@@ -10,11 +10,9 @@
 
 
 .employee_button {
-    color : green;
     margin-top: 1rem;
     margin-inline : 1rem;
     width: 20%;
-    border: 3px solid green;
     padding: 10px;
     box-shadow: 10px;
     display: inline-block;
@@ -22,7 +20,22 @@
     font-size: large;
 }
 
-.employee_button:hover {
+.employee_submit {
+    color: green;
+    border: 3px solid green;
+}
+
+.employee_submit:hover {
     color: white;
     background-color: green;
+}
+
+.employee_delete {
+    color: red;
+    border: 3px solid red;
+}
+
+.employee_delete:hover {
+    color: white;
+    background-color: red;
 }

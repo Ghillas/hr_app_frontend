@@ -114,7 +114,7 @@ function Project() {
             }
             {
                 employees.map((data) => 
-                    <ProjectEmployeesItem key={data.id} employee={data} project={project} onDelete={handleDeleteEmployee}/>
+                    <ProjectEmployeesItem key={data.id} employee={data} onDelete={handleDeleteEmployee}/>
                 )
             }
         </div>

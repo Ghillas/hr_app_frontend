@@ -1,20 +1,13 @@
-import { useNavigate } from "react-router-dom"
-import axios from 'axios'
-import {API_URL} from "../globals"
+import "../styles/ProjectEmployeesItem.css"
+import { FaTrash } from "react-icons/fa";
 
-function ProjectEmployeesItem({employee,project, onDelete}) {
-    /*const navigate = useNavigate()
-    const handleModifyClick = () => {
-        navigate("/employee", {state: {employee}})
-    }
+function ProjectEmployeesItem({employee, onDelete}) {
 
-    const handleDeleteEmployee = (employeeId) => {
-        axios.delete(API_URL + 'employee/' + employeeId + "/project/" + project.id)
-    }*/
-
-    return <div>
-        <p>{employee.firstName + " " + employee.lastName + " : " + employee.mail}</p>
-        <button onClick={() => onDelete(employee.id)}>Supprimer</button>
+    return <div className="projectEmployeeItem">
+        <p className="projectEmployeeItem_description">{employee.firstName + " " + employee.lastName + " : " + employee.mail}</p>
+        <button className="projectEmployeeItem_delete_button" onClick={() => onDelete(employee.id)}>
+            <FaTrash /> 
+        </button>
     </div>
 }
 

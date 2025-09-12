@@ -22,7 +22,7 @@ thead th:nth-child(3) {
   border: 1px solid black;
 }
 
-button {
+.addEmployeeButton {
     color : green;
     margin-top: 1rem;
     margin-inline : auto;
@@ -35,7 +35,7 @@ button {
     font-size: large;
 }
 
-button:hover {
+.addEmployeeButton:hover {
     color: white;
     background-color: green;
 }

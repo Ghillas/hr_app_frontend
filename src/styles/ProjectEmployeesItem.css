@@ -1,0 +1,15 @@
+.projectEmployeeItem {
+    display: block;
+}
+
+.projectEmployeeItem_description {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.projectEmployeeItem_delete_button {
+    display: inline-block;
+    border-radius: 50%;
+    gap: 6px;
+    background-color: red;
+}
