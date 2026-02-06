@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# React Frontend – Client Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is the frontend application of a full-stack project built with React.
+It interacts with a Spring Boot REST API to provide a modern and responsive user interface.
+This project exists in two versions, one basic without authentication, and one with authentication which interact with the secured version of the API (will be published soon).
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Project Structure & Versions
 
-### `npm start`
+This repository contains actually one versions of the Application (secured version will be published soon):
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+###  `main` branch (stable)
+- Public Application
+- No authentication
+- Interact with the basic version of the API
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `withAuthentication` branch (work in progress)
+- Secured Application
+- Interact with the secured version of the API
+- Manage authentication using JWT
+- User Authentication with login
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
 
-### `npm run build`
+- React
+- JavaScript
+- Axios for HTTP requests
+- React Router for navigation
+- JWT authentication
+- CSS
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Authentication Flow
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. The user logs in via a login form
+2. Credentials are sent to the backend API
+3. The API returns a JWT token
+4. The token is stored on the client side
+5. All secured API requests automatically include the token via an Axios interceptor
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Back-end 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This frontend application is designed to work with a Spring Boot REST API.
+The backend repository includes:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- REST endpoints
+- PostgreSQL database
+- JWT authentication (Secured version)
+- Spring Security configuration (Secured version)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Back-end repository : https://github.com/Ghillas/hr_app_backend
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Running the Project
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Prerequisites
 
-### Code Splitting
+- Node.js (v18+ recommended)
+- npm
+- Backend API running locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Intallation
 
-### Analyzing the Bundle Size
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Run the application
 
-### Making a Progressive Web App
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To access the app => http://localhost:3000
