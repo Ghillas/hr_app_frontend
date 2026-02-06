@@ -62,7 +62,7 @@ Back-end repository : https://github.com/Ghillas/hr_app_backend
 
 ### Prerequisites
 
-- Node.js (v18+ recommended)
+- Node.js
 - npm
 - Backend API running locally
 
