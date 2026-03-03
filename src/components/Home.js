@@ -9,6 +9,8 @@ function Home() {
     const handleProjectClick = () => {
         navigate('/projects');
     }
+
+
     return (
         <div className='home_buttons_div'>
             <button 

@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import ProjectItem from "./ProjectItem";
 import '../styles/Employee.css'
+import api from "../api";
+import { API_ROUTES } from "../utils/constant";
 
 function Employee() {
     const location = useLocation()
@@ -30,13 +31,13 @@ function Employee() {
                     employee?.password !== password)) // TODO : extract all these if in a function
                 ) { 
                     const response = employee ?
-                    axios.put("http://localhost:9000/employee/" + employee.id, {
+                    api.put(API_ROUTES.EMPLOYEE_BY_ID(employee.id), {
                         firstName : firstName,
                         lastName : lastName,
                         mail : mail, 
                         password : password
                     })
-                    : axios.post("http://localhost:9000/employee", {
+                    : api.post(API_ROUTES.EMPLOYEE, {
                         firstName : firstName,
                         lastName : lastName,
                         mail : mail,
@@ -54,7 +55,7 @@ function Employee() {
     const handleDelete = async (e) => {
         e.preventDefault()
         try {
-            axios.delete("http://localhost:9000/employee/" + employee.id)
+            api.delete(API_ROUTES.EMPLOYEE_BY_ID(employee.id))
             navigate("/employees")
         } catch(error) {
             console.log(error)
@@ -69,11 +70,11 @@ function Employee() {
 
     useEffect(() => {
         if (employee != null) {
-            axios.get('http://localhost:9000/employee/' + employee.id + '/project')
+            api.get(API_ROUTES.PROJECTS_FROM_EMPLOYEE_BY_ID(employee.id))
                 .then(response => updateProjects(response.data))
                 .catch(error => console.log(error))
         }
-    }, [])
+    }, [employee])
 
     return (
         <div className="employee_div">

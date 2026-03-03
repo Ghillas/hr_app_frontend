@@ -1,8 +1,9 @@
-import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import EmployeeItem from './EmployeeItem';
 import '../styles/Employees.css'
+import api from '../api'
+import { API_ROUTES } from '../utils/constant';
 
 function Employees() {
     const [employees, updateEmployees] = useState([])
@@ -12,7 +13,7 @@ function Employees() {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:9000/employees')
+        api.get(API_ROUTES.EMPLOYEES)
             .then(response => updateEmployees(response.data))
             .catch(error => console.log(error))
     }, []);

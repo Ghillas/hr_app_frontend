@@ -1,7 +1,8 @@
-import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import ProjectItem from './ProjectItem';
+import api from '../api';
+import { API_ROUTES } from '../utils/constant';
 
 function Projects () {
     const [projects, updateProjects] = useState([])
@@ -11,7 +12,7 @@ function Projects () {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:9000/projects')
+        api.get(API_ROUTES.PROJECTS)
             .then(response => updateProjects(response.data))
             .catch(error => console.log(error))
     }, [])

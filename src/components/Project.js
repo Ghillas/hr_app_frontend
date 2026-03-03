@@ -1,9 +1,9 @@
-import axios from 'axios'
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import ProjectEmployeesItem from "./ProjectEmployeesItem"
 import ProjectItem from './ProjectItem'
-import {API_URL} from '../globals'
+import { API_ROUTES } from '../utils/constant'
+import api from '../api'
 
 function Project() {
     const location = useLocation()
@@ -14,7 +14,7 @@ function Project() {
     const [requireAdding,updateRequireAdding] = useState(false) // if we want to add employees
     useEffect(() => {
         if(elementChecked.length === 0 && project) {
-            axios.get(API_URL + 'project/' + project.id + "/employees") // getting all employees of this project
+            api.get(API_ROUTES.EMPLOYEES_FROM_PROJECT_BY_ID(project.id))
                 .then(response => updateEmployees(response.data))
                 .catch(error => console.log(error))
         }
@@ -22,7 +22,7 @@ function Project() {
 
     useEffect(() => {
         if(requireAdding) {
-            axios.get(API_URL + "employees") // getting all employees
+            api.get(API_ROUTES.EMPLOYEES)
                 .then(response => updateAddingEmployees(response.data))
                 .catch(error => console.log(error))
         }
@@ -46,7 +46,7 @@ function Project() {
         updateRequireAdding(prevState => !prevState)
         if(project) {
             elementChecked.forEach((key) => {
-                axios.post(API_URL + "employee/" + key + "/project/" + project.id)
+                api.post(API_ROUTES.EMPLOYEE_BY_ID_FROM_PROJECT_BY_ID(key, project.id))
                 .then(response => {
                     console.log(response.data)
                     if(response.status === 200) {
@@ -65,7 +65,7 @@ function Project() {
 
     const handleDeleteEmployee = (employeeId) => {
         if(project) {
-            axios.delete(API_URL + 'employee/' + employeeId + "/project/" + project.id)
+            api.delete(API_ROUTES.EMPLOYEE_BY_ID_FROM_PROJECT_BY_ID(employeeId, project.id))
             .then((res) => {
                 if(res.status === 200) {
                     updateEmployees((prev) => 
